@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CarComparison.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TCCRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HwyMPG)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TCCRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HwyMPG)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CarID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CarID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CarID })
+        </td>
+    </tr>
+}
+
+</table>
